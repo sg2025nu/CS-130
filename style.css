@@ -1,21 +1,57 @@
-/* You're welcome to change any of this! */
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
-header, section {
+
+h1, h2, h3 {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    font-size: 20pt;
+    font-style: italic;
+    line-height: 10px;
+}
+
+section {
     padding: 20px;
 }
+
+header {
+    padding: top 20px, bottom 10px, left 50px, right 20px;
+    padding-left: 20px;
+}
+
 p, li {
-    line-height: 1.5em;
+    line-height: 1.25em;
+    color: black;
+}
+
+#tutorials {
+    background-color: #ec6fc8;
+}
+
+#homework {
+    background-color: #c468c7;
 }
 
 #inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
+    background-color: #496cd2;
+    padding-top: 15px;
     padding-bottom: 40px;
+
+}
+
+#icon {
+    height: 25px;
+    width: 40px;
+    padding-left: 15px;
 }
