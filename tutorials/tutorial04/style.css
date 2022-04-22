@@ -1,0 +1,96 @@
+.container {
+   display: grid;
+   grid-template-columns: 2fr 2fr 2fr 1fr;
+   grid-template-rows: 1fr 1fr 3fr 2fr;
+   grid-template-areas: 
+      "menu1 menu1 menu2 menu2"
+      "menu1 menu1 menu2 menu2"
+      "card1 card2 card3 aside"
+      "main main main aside"
+   ; 
+   grid-row-gap: 10px;
+   grid-column-gap: 10px;
+   min-height: 85vh;
+   max-width: 90%;
+   
+}
+
+section {
+   margin: 5px;
+   height: 100%;
+   padding: 5px;
+}
+
+.menu1 {
+   grid-area: menu1;
+   height: 30%;
+   width: 40%;
+   background-color: #CF995F;
+}
+
+.menu2 {
+   grid-area: menu2;
+   height: 30%;
+   background-color: #555B6E;
+}
+
+.card1 {
+   grid-area: card1;
+   background-color: #BEE3DB;
+}
+
+.card2 {
+   grid-area: card2;
+   background-color: #BEE3DB;
+}
+
+.card3 {
+   grid-area: card3;
+   background-color: #BEE3DB;
+}
+
+.main {
+   grid-area: main;
+   background-color: #89B0AE;
+}
+
+.aside {
+   grid-area: aside;
+   background-color: #FFD6BA;
+}
+
+@media (max-width: 1024px) { 
+   .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 3fr 2fr 1fr;
+      grid-template-areas: 
+         "menu1 menu2"
+         "aside aside"
+         "card1 card2"
+         "card3 card3"
+         "main main"
+      ;
+   }
+}
+
+@media (max-width: 720px) {
+   .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 3fr 3fr 3fr 3fr 1fr;
+      grid-template-areas: 
+         "menu1"
+         "menu2"
+         "card1"
+         "card2"
+         "card3"
+         "main"
+         "aside"
+      ;
+      width: auto;
+   }
+   .menu1, .menu2 {
+      height: 80%;
+   }
+}
