@@ -1,0 +1,323 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+body {
+    overflow: hidden;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+    grid-template-areas:
+       "left main"
+       "bottom bottom";
+    height: 100vh;
+}
+
+
+
+header {
+    background: #111;
+    position: fixed;
+    width: calc(100vw - 250px);
+    left: 250px;
+}
+
+main {
+    background: #111;
+    grid-area: main;
+    min-height: calc(350px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 3;
+}
+
+nav {
+    margin-top: 100px;
+}
+
+footer {
+    background: #222;
+    grid-area: bottom;
+}
+
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+/* Your Code Here */
+aside {
+    background-color: #000;
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+}
+
+aside a {
+    padding:5px;
+    margin:3px;
+    /* border: solid 1px red; */
+}
+
+
+h1 {
+    font-size: 15pt;
+}
+
+a {
+    font-size: 10pt;
+}
+
+.fa-spotify {
+    font-size: 23pt;
+}
+
+.fas {
+    font-size: 11pt;
+}
+
+a i {
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 12px;
+    height: 20px;
+}
+
+h1 i {
+    padding-left: 10px;
+}
+
+aside .selected {
+    margin-left: 6px;
+    padding-left: 0px;
+    border-left: solid 3px limegreen;
+}
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+/* Your Code Here */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+header a {
+    border: solid 2px grey;
+    border-radius: 50px;
+    width: 110px;
+    height: 25px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    font-size: 9pt;
+}
+
+#profile {
+    color: rgb(196, 196, 196);
+    background-color: #222;
+    border: 0px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+#profile i {
+    font-size: 10pt;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+nav a {
+    margin: 25px;
+    margin-bottom: 15px;
+    padding: 2px;
+    font-size: 9pt;
+}
+
+nav .selected {
+    border-bottom: solid 3px limegreen;
+}
+
+
+
+
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+/* Your Code Here */
+article {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: auto;
+}
+
+img {
+    max-width: 174px;
+    max-height: 174px;
+    border-radius: 100px;
+    margin: 14px;
+    margin-bottom: 5px;
+}
+
+section {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    background-color: #222;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    line-height: 10px;
+}
+
+section h2 {
+    font-size: 13pt;
+    padding-left: 14px;
+}
+
+section p {
+    font-size: 9pt;
+    color: lightgray;
+    padding-left: 14px;
+}
+
+main button {
+    width: 30px;
+    height: 30px;
+    margin-left: 155px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    color: white;
+    background-color: limegreen;
+}
+
+section:hover button {
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+section:focus button, button:focus {
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+/* Your Code Here */
+
+
+@media (max-width: 750px) {
+    aside {
+        display: none;
+    }
+    body {
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "main"
+        "bottom";
+    }
+    header {
+        left: 0px;
+    }
+    #upgrade {
+        display:none;
+    }
+}
+
+/* @media (max-width: 1000px) {
+    article {
+        display: flex;
+        background-color:aquamarine;
+    }
+    section {
+        width: 33%;
+    }
+}
+
+
+
+@media (max-width: 750px) {
+    * {
+        border: solid 1px red;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        align-self: left;
+    }
+    article {
+        display: flex;
+        background-color: teal;
+    }
+    section {
+        width: 40%;
+    }
+    aside {
+        display: none;
+        width: 0px;
+    }
+    #upgrade {
+        display:none;
+    }
+} */
+
