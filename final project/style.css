@@ -1,0 +1,65 @@
+/* colors
+    #EFF7CF super light yellowish
+    #BAD9B5 light turquoise
+    #ABA361 moss green
+    #732C2C medium red
+    #420C14 dark red
+*/
+
+/* text style */
+
+    * {
+        /* set to body font */
+        /* border: solid 1px red; */
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .genre-preview {
+        height: 200px;
+        width: 300px;
+    }
+
+    h1, h2, p {
+        color: white;
+    }
+    h1 {
+        font-size: 20pt;
+    }
+    h2 {
+        font-size: 15pt;
+    }
+    p {
+        font-size: 11pt;
+    }
+
+    a:link {
+        color: white;
+    }
+    a:visited {
+        color: white;
+        
+    }
+    
+
+/* common layout */
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        left: 0;
+        top: 0;
+        width: calc(100% - 40px);
+        height: 60px;
+        position: fixed;
+        background-color: #420C14;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+/* visuals */
+
+

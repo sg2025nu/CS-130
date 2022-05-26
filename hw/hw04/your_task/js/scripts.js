@@ -21,6 +21,32 @@ const getTracks = (term) => {
         get tracks from spotify based on the search term
         "${term}" and load them into the #tracks section 
         of the DOM...`);
+    console.log("about to fetch")
+    fetch('https://www.apitutor.org/spotify/simple/v1/search?type=track&limit=5&q=' + term)
+        .then (response => response.json())
+        .then (tracks => {
+        console.log(tracks)
+        document.querySelector('#tracks').innerHTML = ``
+        if (tracks.length === 0) {
+            document.querySelector('#tracks').innerHTML += `<p>No tracks found for "${term}"</p>`
+        }
+        for (const track of tracks) {
+            console.log(`
+                <p>${track.name}</p>
+            `)
+            document.querySelector('#tracks').innerHTML += 
+            `<button class="track-item preview" data-preview-track="https://p.scdn.co/mp3-preview/879c7106422b0b53852209da6a63210be7e09b01?cid=9697a3a271d24deea38f8b7fbfa0e13c" onclick="handleTrackClick(event);">
+                <img src="${track.album.image_url}">
+                <i class="fas play-track fa-play" aria-hidden="true"></i>
+                <div class="label">
+                    <h2>${track.name}</h2>
+                    <p>
+                        ${track.artist.name}
+                    </p>
+                </div>
+            </button>`
+        }  
+    })
 };
 
 const getAlbums = (term) => {
@@ -46,7 +72,7 @@ const getArtist = (term) => {
                 elem.innerHTML += getArtistHTML(firstArtist)
                 console.log(firstArtist)
             } else {
-                elem.innerHTML += `<p>no results returned</p>`
+                elem.innerHTML += `<p>No artists found for "${term}"</p>`
             }
         }))
 };
