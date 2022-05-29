@@ -17,11 +17,6 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    .genre-preview {
-        height: 200px;
-        width: 300px;
-    }
-
     h1, h2, p {
         color: white;
     }
@@ -60,6 +55,13 @@
         padding-right: 20px;
     }
 
-/* visuals */
-
-
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        position: relative;
+        height: 300px; 
+    }
+    h2 {
+        font-size: 12pt;
+    }
+}
