@@ -39,6 +39,8 @@ main {
     height: 605px;
 }
 
+
+
 /* images */
 
 .horizontal {
@@ -46,6 +48,30 @@ main {
 }
 .vertical {
     height: 300px;
+}
+
+/* expanded image effect */
+
+input {
+    display: none;
+}
+.h:checked + label > img {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 7%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: black;
+}
+.v:checked + label > img {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: black;
 }
 
 
