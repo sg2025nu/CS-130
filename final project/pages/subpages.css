@@ -49,6 +49,9 @@ main {
 .vertical {
     height: 300px;
 }
+img:hover {
+    opacity: 75%;
+}
 
 /* expanded image effect */
 
